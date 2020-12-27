@@ -1,19 +1,12 @@
-package main
+package server
 
 import (
 	"log"
 	"net"
-	"os"
-	"strconv"
 	"time"
 )
 
-func main()  {
-	portStr := os.Getenv("PORT")
-	if portStr == "" {
-		panic("port is empty")
-	}
-	port, _ := strconv.Atoi(portStr)
+func StartServer(port int)  {
 	listener, err := net.ListenUDP("udp", &net.UDPAddr{IP: net.IPv4zero, Port: port})
 	if err != nil {
 		panic(err)

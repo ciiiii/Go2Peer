@@ -1,1 +1,1 @@
-release: Go2Peer
+web: server
